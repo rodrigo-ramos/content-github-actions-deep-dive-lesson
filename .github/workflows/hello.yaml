@@ -1,0 +1,10 @@
+name: say Hello
+on: push
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Say hello, my friend
+        run: echo "HEllO WORLD"
