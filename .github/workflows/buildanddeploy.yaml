@@ -13,7 +13,10 @@ jobs:
         with:
           python-version: 3.8
       - name: Install libraries
-        run: pip install flake8
+        run: |
+            cd function
+            python -m pip install --upgrade pip
+            pip install flake8
       - name: Lint with flake8
         run: |
             cd function
@@ -33,7 +36,6 @@ jobs:
       - name: Install libraries
         run: |
             cd function
-            python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi 
       - name: Zip bundle
         run: |
